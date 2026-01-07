@@ -12,11 +12,19 @@ export const profile: Profile = {
   socialLinks: [
     {
       platform: 'GitHub',
-      url: 'https://github.com/dickyfebri',
+      url: 'https://github.com/dickyfp6/',
     },
     {
       platform: 'LinkedIn',
       url: 'https://www.linkedin.com/in/dicky-febri-primadhani/',
+    },
+    {
+      platform: 'Instagram',
+      url: 'https://www.instagram.com/dickyhyungnim_/',
+    },
+    {
+      platform: 'WhatsApp',
+      url: 'https://wa.me/6289529721950',
     },
   ],
   profileImage: '/images/profile.png',
