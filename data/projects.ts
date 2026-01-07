@@ -1,0 +1,197 @@
+import { Project } from './types';
+
+export const projects: Project[] = [
+  {
+    id: 'nutrilink-healthygo',
+    title: 'NutriLink x HealthyGo',
+    description: 'Nutrition decision support Android mobile application featuring energy requirement calculations, rule-based meal recommendations, and consumption tracking.',
+    category: 'Mobile Development',
+    techStack: ['Flutter', 'Dart', 'Firebase', 'Gemini API', 'Git'],
+    period: 'Sept - Dec 2025',
+    featured: true,
+    relevanceTags: ['mobile', 'health-tech', 'firebase'],
+    detailedContent: {
+      overview: 'Developed a mobile-based nutrition decision support application featuring energy requirement calculations (Mifflin–St Jeor, TDEE), rule-based meal recommendations, and consumption tracking. Implemented backend services using Firebase to support authentication, real-time data synchronization, and profile management.',
+      approach: [
+        'Implemented Mifflin–St Jeor and TDEE calculations for energy requirements',
+        'Built rule-based meal recommendation system',
+        'Integrated Firebase Auth for user authentication',
+        'Implemented Firestore for real-time data synchronization',
+        'Integrated Gemini API for enhanced recommendations',
+        'Developed following formal SRS Document standards',
+      ],
+      output: [
+        'Fully functional nutrition tracking mobile app',
+        'Accurate calorie and TDEE calculations',
+        'Real-time meal consumption tracking',
+        'User profile and preference management',
+        'Tested for calculation accuracy and reliability',
+      ],
+      challenges: [
+        'Ensuring calculation accuracy for nutrition formulas',
+        'Managing real-time data synchronization with Firebase',
+        'Implementing intuitive UI/UX for health tracking',
+        'Integrating multiple APIs seamlessly',
+      ],
+    },
+    thumbnail: '/images/projects/nutrilink.jpg',
+    links: {
+      github: 'https://github.com/dickyfebri/nutrilink',
+    },
+  },
+  {
+    id: 'sekn-marketplace',
+    title: 'SEKN - Second-Hand Electronics Marketplace',
+    description: 'Web-based marketplace prototype for second-hand electronics with specification-based search, price comparison, and location-based features.',
+    category: 'Web Development',
+    techStack: ['HTML', 'CSS', 'JavaScript', 'Geolocation API', 'localStorage'],
+    period: 'Nov - Dec 2025',
+    featured: true,
+    relevanceTags: ['web', 'e-commerce', 'frontend'],
+    detailedContent: {
+      overview: 'Developed a web-based marketplace prototype for second-hand electronics, enabling product listing, specification-based search, and comparison by price and location. The project emphasized fundamental web development and system workflow design without backend frameworks.',
+      approach: [
+        'Implemented client-side data management using localStorage',
+        'Built price estimation logic based on depreciation rules',
+        'Integrated Geolocation API for distance calculation',
+        'Designed responsive UI with vanilla HTML, CSS, JavaScript',
+        'Created specification-based product filtering system',
+      ],
+      output: [
+        'Functional e-commerce prototype',
+        'Client-side product listing and search',
+        'Location-based price comparison',
+        'Product specification filtering',
+        'Responsive design for multiple devices',
+      ],
+      challenges: [
+        'Managing state without backend framework',
+        'Implementing accurate depreciation calculations',
+        'Handling geolocation permissions and accuracy',
+      ],
+    },
+    thumbnail: '/images/projects/sekn.jpg',
+    links: {
+      github: 'https://github.com/dickyfebri/sekn-marketplace',
+    },
+  },
+  {
+    id: 'event-ticketing-system',
+    title: 'Event Ticketing & Transaction Management System',
+    description: 'Automated ticketing and transaction management system for large-scale events with seat availability control and real-time confirmations.',
+    category: 'Automation & Systems',
+    techStack: ['Google Apps Script', 'JavaScript', 'Google Sheets', 'WhatsApp API', 'Excel'],
+    period: 'Aug - Nov 2025',
+    featured: true,
+    relevanceTags: ['automation', 'event-management', 'api-integration'],
+    detailedContent: {
+      overview: 'Designed and managed a ticketing and transaction management system for ITS Student Choir large-scale events, including seat availability control and sales tracking. Implemented automation to process transactions, prevent double booking, and send real-time confirmations.',
+      approach: [
+        'Built form-based transaction processing with Google Apps Script',
+        'Implemented double booking prevention logic',
+        'Integrated WhatsApp API for purchase confirmations',
+        'Created seat availability tracking and control system',
+        'Designed sales tracking and reporting dashboard',
+      ],
+      output: [
+        'Automated ticketing system for multiple events',
+        'Zero double bookings through validation logic',
+        'Real-time purchase confirmations via WhatsApp',
+        'Improved operational efficiency and data accuracy',
+        'Reduced manual coordination requirements',
+      ],
+      challenges: [
+        'Handling concurrent form submissions',
+        'Ensuring data consistency across sheets',
+        'Managing API rate limits for WhatsApp notifications',
+      ],
+    },
+    thumbnail: '/images/projects/ticketing.jpg',
+  },
+  {
+    id: 'gerigi-grouping-system',
+    title: 'Student Grouping System - Gerigi ITS 2024',
+    description: 'Rule-based Python system for assigning 360+ new students into orientation units under multiple constraints including gender balance and faculty distribution.',
+    category: 'Data Processing',
+    techStack: ['Python', 'Pandas', 'Excel'],
+    period: 'June - Sept 2024',
+    featured: false,
+    relevanceTags: ['python', 'data-processing', 'automation'],
+    detailedContent: {
+      overview: 'Developed a rule-based student grouping system to assign 360+ new students into orientation units for Gerigi ITS 2024. The system handled multiple constraints including gender balance, faculty distribution, and unit capacity to support large-scale operational execution.',
+      approach: [
+        'Analyzed requirements for balanced student distribution',
+        'Implemented constraint-based grouping algorithm in Python',
+        'Handled gender balance and faculty distribution requirements',
+        'Managed unit capacity constraints',
+        'Automated data processing and output generation',
+      ],
+      output: [
+        'Successfully grouped 360+ students',
+        'Met all distribution constraints (gender, faculty, capacity)',
+        'Automated manual grouping process',
+        'Generated reports for operational teams',
+      ],
+      challenges: [
+        'Balancing multiple conflicting constraints',
+        'Ensuring fair and even distribution',
+        'Processing large datasets efficiently',
+      ],
+    },
+    thumbnail: '/images/projects/gerigi.jpg',
+  },
+  {
+    id: 'rumah-teror-scoring',
+    title: 'Rumah Teror - Visitor Scoring System',
+    description: 'Data management system for tracking visitor scores, rating distributions, and completion times to support performance evaluation.',
+    category: 'Data Management',
+    techStack: ['Google Sheets', 'Excel'],
+    period: 'June - July 2023',
+    featured: false,
+    relevanceTags: ['data-management', 'operations'],
+    detailedContent: {
+      overview: 'Managed and recorded visitor score data for Rumah Teror event, including rating distribution and completion time tracking. Supported performance evaluation and finalist selection through structured data processing.',
+      approach: [
+        'Designed data structure for score tracking',
+        'Implemented rating distribution analysis',
+        'Tracked completion times for performance metrics',
+        'Created reports for evaluation committee',
+      ],
+      output: [
+        'Accurate visitor score tracking',
+        'Rating distribution analysis',
+        'Performance evaluation reports',
+        'Finalist selection support',
+      ],
+    },
+    thumbnail: '/images/projects/scoring.jpg',
+  },
+];
+
+// Helper function to get unique categories
+export const getCategories = (): string[] => {
+  return Array.from(new Set(projects.map(p => p.category))).sort();
+};
+
+// Helper function to get featured projects
+export const getFeaturedProjects = (): Project[] => {
+  return projects.filter(p => p.featured);
+};
+
+// Helper function to get projects by category
+export const getProjectsByCategory = (category: string): Project[] => {
+  return projects.filter(p => p.category === category);
+};
+
+// Helper function to get related projects based on tags
+export const getRelatedProjects = (project: Project, limit: number = 3): Project[] => {
+  return projects
+    .filter(p => p.id !== project.id)
+    .map(p => ({
+      project: p,
+      score: p.relevanceTags.filter(tag => project.relevanceTags.includes(tag)).length,
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(item => item.project);
+};

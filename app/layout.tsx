@@ -1,0 +1,39 @@
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { Navigation } from '@/components/Navigation';
+import { PortfolioModalManager } from '@/components/PortfolioModalManager';
+import { profile } from '@/data/profile';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: `${profile.fullName} - ${profile.title}`,
+  description: profile.shortBio,
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          <main className="pt-16">
+            {children}
+          </main>
+          <PortfolioModalManager />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
