@@ -6,7 +6,7 @@ import { profile } from '@/data/profile';
 import { getFeaturedProjects } from '@/data/projects';
 import { getPrimaryOrganization } from '@/data/experiences';
 import { ProjectGrid } from '@/components/ProjectGrid';
-import { Download, ArrowRight, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Download, ArrowRight, Mail, Github, Linkedin, Twitter, Instagram, Phone } from 'lucide-react';
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -67,7 +67,9 @@ export default function Home() {
               {profile.socialLinks.map((link) => {
                 const Icon = link.platform === 'GitHub' ? Github : 
                            link.platform === 'LinkedIn' ? Linkedin : 
-                           link.platform === 'Twitter' ? Twitter : null;
+                           link.platform === 'Twitter' ? Twitter :
+                           link.platform === 'Instagram' ? Instagram :
+                           link.platform === 'WhatsApp' ? Phone : null;
                 
                 return Icon ? (
                   <a

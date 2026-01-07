@@ -36,7 +36,8 @@ export const projects: Project[] = [
     },
     thumbnail: '/images/projects/nutrilink.jpg',
     links: {
-      github: 'https://github.com/dickyfebri/nutrilink',
+      github: 'https://github.com/dinalarcode/CAPS-2-2025.git',
+      presentation: '/presentations/nutrilink-healthygo.pdf',
     },
   },
   {

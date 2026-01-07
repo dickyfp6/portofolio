@@ -41,6 +41,7 @@ export interface Project {
     github?: string;
     live?: string;
     demo?: string;
+    presentation?: string; // Google Slides embed URL or PDF URL
   };
 }
 

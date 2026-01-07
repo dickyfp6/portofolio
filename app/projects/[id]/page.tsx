@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { projects, getRelatedProjects } from '@/data/projects';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Download } from 'lucide-react';
 import { ProjectGrid } from '@/components/ProjectGrid';
 
 export function generateStaticParams() {
@@ -101,6 +101,22 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               {project.detailedContent.overview}
             </p>
           </div>
+
+          {/* Presentation Viewer */}
+          {project.links?.presentation && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-4 text-foreground-light dark:text-foreground-dark">
+                Presentation Overview
+              </h2>
+              <div className="relative w-full rounded-xl overflow-hidden border border-border-light dark:border-border-dark shadow-lg bg-white" style={{ height: '600px' }}>
+                <iframe
+                  src={project.links.presentation}
+                  className="absolute top-0 left-0 w-full h-full"
+                  title={`${project.title} Presentation`}
+                />
+              </div>
+            </div>
+          )}
           
           {/* Approach */}
           <div className="mb-12">

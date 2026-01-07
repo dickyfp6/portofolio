@@ -1,5 +1,5 @@
 import { profile } from '@/data/profile';
-import { Mail, MapPin, Github, Linkedin, Twitter, ArrowLeft } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Twitter, Instagram, Phone, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AboutPage() {
@@ -110,7 +110,9 @@ export default function AboutPage() {
                       {profile.socialLinks.map((link) => {
                         const Icon = link.platform === 'GitHub' ? Github : 
                                    link.platform === 'LinkedIn' ? Linkedin : 
-                                   link.platform === 'Twitter' ? Twitter : null;
+                                   link.platform === 'Twitter' ? Twitter :
+                                   link.platform === 'Instagram' ? Instagram :
+                                   link.platform === 'WhatsApp' ? Phone : null;
                         
                         return Icon ? (
                           <a
