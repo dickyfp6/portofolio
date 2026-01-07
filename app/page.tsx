@@ -16,7 +16,26 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-[1fr,300px] gap-12 items-center">
+        <div className="grid md:grid-cols-[1fr,300px] gap-8 md:gap-12 items-center">
+          {/* Profile Image - Show on mobile at top */}
+          <div className="md:hidden flex justify-center">
+            <div className="relative w-48 h-60 rounded-2xl overflow-hidden border-4 border-blue-500 dark:border-purple-500 shadow-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+              {profile.profileImage ? (
+                <Image
+                  src={profile.profileImage}
+                  alt={profile.fullName}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-gray-400 dark:text-gray-600">
+                  {profile.fullName.split(' ').map(n => n[0]).join('')}
+                </div>
+              )}
+            </div>
+          </div>
+
           <div>
             <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-pink-400/10 border border-blue-500/20 dark:border-blue-400/20 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
               ✨ Available for opportunities
@@ -87,7 +106,7 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Profile Image */}
+          {/* Profile Image - Desktop only */}
           <div className="hidden md:block">
             <div className="relative w-full rounded-2xl overflow-hidden border-4 border-blue-500 dark:border-purple-500 shadow-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20" style={{ aspectRatio: '4/5' }}>
               {profile.profileImage ? (
@@ -120,18 +139,18 @@ export default function Home() {
 
       {/* Current Role */}
       {primaryOrg && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border-light dark:border-border-dark">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 border-t border-border-light dark:border-border-dark">
           <div className="max-w-4xl">
-            <h2 className="text-sm uppercase tracking-wider text-foreground-light/50 dark:text-foreground-dark/50 mb-4">
+            <h2 className="text-xs sm:text-sm uppercase tracking-wider text-foreground-light/50 dark:text-foreground-dark/50 mb-4">
               Current Role
             </h2>
             
-            <div className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 border border-blue-200 dark:border-blue-800/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all">
-              <h3 className="text-2xl font-bold mb-2 text-foreground-light dark:text-foreground-dark">
+            <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 border border-blue-200 dark:border-blue-800/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-foreground-light dark:text-foreground-dark">
                 {primaryOrg.currentRole}
               </h3>
               
-              <div className="flex items-center gap-2 text-foreground-light/70 dark:text-foreground-dark/70 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-foreground-light/70 dark:text-foreground-dark/70 mb-4">
                 <span className="font-medium">{primaryOrg.organizationName}</span>
                 <span>•</span>
                 <span>{primaryOrg.currentPeriod}</span>
@@ -154,8 +173,8 @@ export default function Home() {
       )}
 
       {/* Featured Projects */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border-light dark:border-border-dark">
-        <div className="flex items-center justify-between mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 border-t border-border-light dark:border-border-dark">
+        <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-sm uppercase tracking-wider bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent font-semibold mb-2">
               Featured Work

@@ -20,6 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+          async
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

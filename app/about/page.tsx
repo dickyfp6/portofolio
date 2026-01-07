@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="max-w-4xl">
           <Link 
             href="/" 
@@ -22,10 +22,10 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="md:col-span-2 space-y-6">
               <div>
-                <h2 className="text-2xl font-bold mb-4 text-foreground-light dark:text-foreground-dark">
+                <h2 className="text-xl sm:text-2xl font-bold mb-4 text-foreground-light dark:text-foreground-dark">
                   {profile.fullName}
                 </h2>
-                <p className="text-xl text-accent-light dark:text-accent-dark mb-4">
+                <p className="text-lg sm:text-xl text-accent-light dark:text-accent-dark mb-4">
                   {profile.title}
                 </p>
                 <p className="text-foreground-light/70 dark:text-foreground-dark/70 text-lg leading-relaxed">
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </div>
             
             <div>
-              <div className="p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark sticky top-24">
+              <div className="p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark md:sticky md:top-24">
                 <h3 className="text-lg font-bold mb-4 text-foreground-light dark:text-foreground-dark">
                   Contact Information
                 </h3>

@@ -13,9 +13,9 @@ export function ExperienceCard({ organization }: ExperienceCardProps) {
 
   return (
     <div className="p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
         <div className="flex-grow">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
             <h3 className="text-2xl font-bold text-foreground-light dark:text-foreground-dark">
               {organization.organizationName}
             </h3>
@@ -26,7 +26,7 @@ export function ExperienceCard({ organization }: ExperienceCardProps) {
             )}
           </div>
           
-          <div className="flex items-center gap-2 text-foreground-light/70 dark:text-foreground-dark/70 mb-1">
+          <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-foreground-light/70 dark:text-foreground-dark/70 mb-1">
             <span className="font-medium">{organization.currentRole}</span>
             <span>•</span>
             <span>{organization.currentPeriod}</span>

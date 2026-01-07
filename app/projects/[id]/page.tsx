@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { projects, getRelatedProjects } from '@/data/projects';
 import { ArrowLeft, ExternalLink, Github, Download } from 'lucide-react';
 import { ProjectGrid } from '@/components/ProjectGrid';
+import { PresentationViewer } from '@/components/PresentationViewer';
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -21,7 +22,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
   return (
     <div className="min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Link
           href="/projects"
           className="inline-flex items-center gap-2 text-accent-light dark:text-accent-dark font-medium hover:gap-3 transition-all mb-8"
@@ -52,7 +53,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             
             {/* Links */}
             {project.links && (
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {project.links.github && (
                   <a
                     href={project.links.github}
@@ -108,13 +109,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               <h2 className="text-2xl font-bold mb-4 text-foreground-light dark:text-foreground-dark">
                 Presentation Overview
               </h2>
-              <div className="relative w-full rounded-xl overflow-hidden border border-border-light dark:border-border-dark shadow-lg bg-white" style={{ height: '600px' }}>
-                <iframe
-                  src={project.links.presentation}
-                  className="absolute top-0 left-0 w-full h-full"
-                  title={`${project.title} Presentation`}
-                />
-              </div>
+              <PresentationViewer 
+                pdfUrl={project.links.presentation}
+                title={project.title}
+              />
             </div>
           )}
           

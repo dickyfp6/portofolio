@@ -37,7 +37,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Link 
           href="/" 
           className="inline-flex items-center gap-2 text-foreground-light/70 dark:text-foreground-dark/70 hover:text-accent-light dark:hover:text-accent-dark transition-colors mb-8 group"
