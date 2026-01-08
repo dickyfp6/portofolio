@@ -63,3 +63,15 @@ export interface Organization {
   website?: string;
   experiences: Experience[];
 }
+
+export interface DevelopmentActivity {
+  id: string;
+  title: string;
+  institution: string;
+  description: string;
+  stages: {
+    name: string;
+    focus: string;
+    description: string;
+  }[];
+}

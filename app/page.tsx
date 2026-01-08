@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { profile } from '@/data/profile';
 import { getFeaturedProjects } from '@/data/projects';
-import { getPrimaryOrganization } from '@/data/experiences';
+import { getPrimaryOrganization, developmentActivities } from '@/data/experiences';
 import { ProjectGrid } from '@/components/ProjectGrid';
-import { Download, ArrowRight, Mail, Github, Linkedin, Twitter, Instagram, Phone } from 'lucide-react';
+import { Download, ArrowRight, Mail, Github, Linkedin, Twitter, Instagram, Phone, GraduationCap } from 'lucide-react';
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -201,6 +201,81 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all"
           >
             View All Projects
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Development Activities */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 border-t border-border-light dark:border-border-dark">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="text-sm uppercase tracking-wider bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent font-semibold mb-2">
+              Professional Development
+            </h2>
+            <p className="text-3xl font-bold text-foreground-light dark:text-foreground-dark">
+              Development Activities
+            </p>
+          </div>
+          
+          <Link
+            href="/development"
+            className="group hidden md:inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-medium hover:gap-3 transition-all"
+          >
+            View All
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+        
+        <div className="grid gap-6">
+          {developmentActivities.map((activity) => (
+            <div 
+              key={activity.id}
+              className="p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 border border-emerald-200 dark:border-emerald-800/50 hover:shadow-xl hover:shadow-emerald-500/10 transition-all"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-emerald-600/10 dark:bg-emerald-400/10">
+                  <GraduationCap className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground-light dark:text-foreground-dark mb-1">
+                    {activity.title}
+                  </h3>
+                  <p className="text-sm text-foreground-light/70 dark:text-foreground-dark/70">
+                    {activity.institution}
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-foreground-light/80 dark:text-foreground-dark/80 mb-4 leading-relaxed">
+                {activity.description}
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-3">
+                {activity.stages.map((stage, index) => (
+                  <div
+                    key={index}
+                    className="p-3 rounded-lg bg-white/50 dark:bg-gray-900/50 border border-emerald-200/50 dark:border-emerald-800/30"
+                  >
+                    <h4 className="font-semibold text-sm text-foreground-light dark:text-foreground-dark mb-1">
+                      {stage.name}
+                    </h4>
+                    <p className="text-xs text-emerald-600 dark:text-emerald-400">
+                      {stage.focus}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <Link
+            href="/development"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-400 transition-all"
+          >
+            View All Development Activities
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
