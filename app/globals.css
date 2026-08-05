@@ -5,12 +5,12 @@
 @layer base {
   :root {
     --background: 255 255 255;
-    --foreground: 10 10 10;
+    --foreground: 15 23 42;
   }
 
   .dark {
-    --background: 10 10 10;
-    --foreground: 237 237 237;
+    --background: 2 8 23;
+    --foreground: 248 250 252;
   }
 
   * {
@@ -18,7 +18,7 @@
   }
 
   body {
-    @apply bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark;
+    @apply bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark antialiased selection:bg-accent-light/20 dark:selection:bg-accent-dark/30 selection:text-accent-light dark:selection:text-accent-dark;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -26,6 +26,9 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .glass-panel {
+    @apply bg-white/70 dark:bg-[#020817]/70 backdrop-blur-md border border-border-light/50 dark:border-border-dark/50;
   }
 }
 
@@ -36,13 +39,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-background-light dark:bg-background-dark;
+  @apply bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-border-light dark:bg-border-dark rounded-md;
+  @apply bg-border-light dark:bg-border-dark rounded-full border-2 border-background-light dark:border-background-dark;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent-light dark:bg-accent-dark;
+  @apply bg-slate-400 dark:bg-slate-600;
 }

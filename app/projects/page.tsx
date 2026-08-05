@@ -37,40 +37,40 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-foreground-light/70 dark:text-foreground-dark/70 hover:text-accent-light dark:hover:text-accent-dark transition-colors mb-8 group"
+          className="inline-flex items-center gap-2 text-foreground-light/70 dark:text-foreground-dark/70 hover:text-accent-light dark:hover:text-accent-dark transition-colors mb-6 group"
         >
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          Back to Home
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          <span className="font-medium text-sm">Back to Home</span>
         </Link>
         
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground-light dark:text-foreground-dark">
+        <div className="mb-8">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-3 tracking-tight text-foreground-light dark:text-foreground-dark">
             All Projects
           </h1>
-          <p className="text-lg text-foreground-light/70 dark:text-foreground-dark/70 max-w-2xl">
+          <p className="text-base text-foreground-light/70 dark:text-foreground-dark/70 max-w-2xl">
             A collection of engineering projects showcasing system design, scalable architectures, and data-driven solutions.
           </p>
         </div>
         
         {/* Search Bar */}
-        <div className="mb-8">
+        <div className="mb-6">
           <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-foreground-light/50 dark:text-foreground-dark/50" />
+            <Search className="absolute left-3.5 top-1/2 transform -translate-y-1/2 w-4 h-4 text-foreground-light/50 dark:text-foreground-dark/50" />
             <input
               type="text"
               placeholder="Search projects, technologies, or tags..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-lg bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark focus:border-accent-light dark:focus:border-accent-dark outline-none transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark focus:border-accent-light dark:focus:border-accent-dark text-sm outline-none transition-colors"
             />
           </div>
         </div>
         
         {/* Category Filter */}
-        <div className="mb-12">
+        <div className="mb-8">
           <ProjectFilter
             categories={categories}
             selectedCategory={selectedCategory}

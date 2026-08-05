@@ -27,5 +27,5 @@ export const profile: Profile = {
       url: 'https://wa.me/6289529721950',
     },
   ],
-  profileImage: '/images/profile.png',
+  profileImage: '/images/profile.jpeg',
 };

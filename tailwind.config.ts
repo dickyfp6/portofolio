@@ -12,29 +12,37 @@ const config: Config = {
       colors: {
         background: {
           light: '#ffffff',
-          dark: '#0a0a0a',
+          dark: '#020817', // Deep slate for premium look
         },
         foreground: {
-          light: '#0a0a0a',
-          dark: '#ededed',
+          light: '#0f172a',
+          dark: '#f8fafc',
         },
         card: {
-          light: '#f5f5f5',
-          dark: '#1a1a1a',
+          light: '#ffffff',
+          dark: '#0f172a', // Slate 900
         },
         border: {
-          light: '#e5e5e5',
-          dark: '#2a2a2a',
+          light: '#e2e8f0', // Slate 200
+          dark: '#1e293b', // Slate 800
         },
         accent: {
-          light: '#0070f3',
-          dark: '#3b82f6',
+          light: '#6366f1', // Indigo 500
+          dark: '#818cf8', // Indigo 400
+        },
+        muted: {
+          light: '#f1f5f9', // Slate 100
+          dark: '#1e293b', // Slate 800
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
+      boxShadow: {
+        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+        'glass-dark': '0 4px 30px rgba(0, 0, 0, 0.5)',
+      }
     },
   },
   plugins: [],
