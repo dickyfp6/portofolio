@@ -1,0 +1,30 @@
+[
+  {
+    "id": "lkmm-its",
+    "title": "Latihan Keterampilan Manajemen Mahasiswa (LKMM)",
+    "institution": "Institut Teknologi Sepuluh Nopember (ITS)",
+    "description": "Completed a structured leadership development program covering personal, event, and organizational management stages. The program emphasized self-awareness and communication skills, event planning and execution, facilitation and public speaking, as well as organizational governance and strategic analysis. Through progressive LKMM levels (Pra-TD, TD, PP, TM), developed competencies in managing individuals, teams, and organizations within academic and student activity environments.",
+    "stages": [
+      {
+        "name": "LKMM Pra-TD — Personal Management",
+        "focus": "Self-awareness and personal development",
+        "description": "Focused on self-awareness and personal development, including identification of individual strengths and behavioral tendencies through personality frameworks (MBTI, Johari Window, Big Five). Trained in effective communication, active listening, self-reflection, and personal goal management as a foundation for leadership development."
+      },
+      {
+        "name": "LKMM TD — Event Management",
+        "focus": "Planning and managing events",
+        "description": "Developed competencies in planning and managing events, including idea formulation, communication flow design, task delegation, timeline management, proposal development, accountability reporting, teamwork motivation, and conflict management in event-based environments."
+      },
+      {
+        "name": "LKMM PP — Facilitator & Trainer Development",
+        "focus": "Facilitation and public speaking",
+        "description": "Completed facilitator training to support LKMM programs as a guide and mentor. Trained in audience management, participant behavior analysis, and facilitation techniques, including handling diverse participant types and delivering materials through effective public speaking and engagement strategies."
+      },
+      {
+        "name": "LKMM TM — Organizational Management",
+        "focus": "Organizational leadership and strategic management",
+        "description": "Focused on organizational leadership and strategic management, covering organizational governance, environmental scanning, IFAS–EFAS analysis, organizational positioning, and strategy formulation to support sustainable organizational development."
+      }
+    ]
+  }
+]

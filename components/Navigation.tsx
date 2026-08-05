@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
 import { Home, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [secretClickCount, setSecretClickCount] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
 
   const isActive = (path: string) => pathname === path;
 
@@ -23,15 +25,26 @@ export function Navigation() {
     <nav className="fixed top-0 w-full z-50 glass-panel">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 text-xl font-bold text-foreground-light dark:text-foreground-dark hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 group"
+          <div 
+            onClick={() => {
+              setSecretClickCount(prev => prev + 1);
+              if (secretClickCount >= 4) {
+                router.push('/admin');
+                setSecretClickCount(0);
+              }
+              // Reset count after 2 seconds if they don't click fast enough
+              setTimeout(() => setSecretClickCount(0), 2000);
+            }}
+            className="flex items-center gap-2 text-xl font-bold text-foreground-light dark:text-foreground-dark hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 group cursor-pointer select-none"
           >
             <div className="p-2 rounded-lg bg-card-light dark:bg-card-dark shadow-sm border border-border-light dark:border-border-dark group-hover:shadow-md transition-all">
-              <Home className="w-5 h-5 group-hover:scale-110 transition-transform text-accent-light dark:text-accent-dark" />
+              <Home className="w-5 h-5 group-hover:scale-110 transition-transform text-accent-light dark:text-accent-dark" onClick={(e) => {
+                e.stopPropagation();
+                router.push('/');
+              }} />
             </div>
             <span className="hidden sm:inline tracking-tight font-extrabold">DFP</span>
-          </Link>
+          </div>
           
           <div className="flex items-center gap-6">
             {/* Desktop Navigation */}

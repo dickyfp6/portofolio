@@ -6,14 +6,6 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-8 md:pt-12 pb-16">
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark text-foreground-light/70 dark:text-foreground-dark/70 hover:text-foreground-light dark:hover:text-foreground-dark hover:shadow-sm transition-all mb-8 md:mb-12 group w-fit"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="font-medium text-sm">Back to Home</span>
-        </Link>
-        
         <div className="mb-10 md:mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-foreground-light dark:text-foreground-dark">
             About Me
